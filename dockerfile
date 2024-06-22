@@ -14,7 +14,7 @@ RUN npm install -g pnpm && pnpm install
 COPY . .
 
 # start app
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["pnpm", "start"]
 
 # Your application binds to port 3000, so you'll use the EXPOSE instruction to have it mapped by the docker daemon
 EXPOSE 3000
