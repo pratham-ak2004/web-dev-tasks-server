@@ -14,10 +14,10 @@ RUN npm install -g pnpm && pnpm install
 COPY . .
 
 # start app
-ENTRYPOINT ["node", "server.js"]
+# ENTRYPOINT ["node", "server.js"]
 
 # Your application binds to port 3000, so you'll use the EXPOSE instruction to have it mapped by the docker daemon
 EXPOSE 3000
 
 # Define the command to run your app using CMD which defines your runtime
-# CMD [ "pnpm", "start" ]
+CMD [ "pnpm", "start" ]
