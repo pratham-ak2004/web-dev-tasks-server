@@ -2,7 +2,7 @@
 FROM node:18
 
 # Set the working directory inside the container
-WORKDIR /usr/src/app
+# WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json (or pnpm-lock.yaml in your case) to the working directory
 COPY package*.json pnpm-lock.yaml ./
@@ -14,7 +14,7 @@ RUN npm install -g pnpm && pnpm install
 COPY . .
 
 # start app
-ENTRYPOINT ["pnpm", "start"]
+ENTRYPOINT ["node", "server.js"]
 
 # Your application binds to port 3000, so you'll use the EXPOSE instruction to have it mapped by the docker daemon
 EXPOSE 3000
