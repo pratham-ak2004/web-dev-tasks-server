@@ -1,6 +1,6 @@
 // Library imports
 const express = require("express");
-const https = require("http"); // user http or https library as required
+const https = require("https"); // user http or https library as required
 const { readFileSync } = require("fs");
 const cors = require("cors");
 const { corsConfig } = require('./lib/config')
@@ -12,7 +12,7 @@ const createWebRTCSocket = require('./lib/webRTC-routes')
 
 // Express app initialization
 const app = express({
-  cors: ["*"],
+  cors: ["*" , 'https://web-dev-tasks.vercel.app'],
 })
   .use(cors())
   .use(require("./lib/api-routes"));
