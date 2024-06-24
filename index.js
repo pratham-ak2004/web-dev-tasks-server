@@ -1,6 +1,6 @@
 // Library imports
 const express = require("express");
-const https = require("https"); // user http or https library as required
+const https = require("http"); // user http or https library as required
 const { readFileSync } = require("fs");
 const cors = require("cors");
 const { corsConfig } = require('./lib/config')
@@ -19,10 +19,10 @@ const app = express({
 
 //  HTTPS server initialization
 const server = https.createServer(
-  {
-    key: readFileSync("./certificates/cert.key"),
-    cert: readFileSync("./certificates/cert.crt"),
-  },
+  // {
+  //   key: readFileSync("./certificates/cert.key"),
+  //   cert: readFileSync("./certificates/cert.crt"),
+  // },
   app
 ); // pass app at the last after specifying the certificates
 
