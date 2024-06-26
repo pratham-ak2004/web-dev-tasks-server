@@ -1,5 +1,7 @@
+import { type Server } from "socket.io";
+
 // Function to create socket for chat application
-function createChatSocket(socketServer, corsConfig) {
+function createChatSocket(socketServer:Server) {
   const io = socketServer.of("/chat");
 
   io.on("connection", (socket) => {
@@ -26,4 +28,4 @@ function createChatSocket(socketServer, corsConfig) {
   return io;
 }
 
-module.exports = createChatSocket;
+export { createChatSocket }

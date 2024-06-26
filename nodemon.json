@@ -1,0 +1,6 @@
+{
+  "watch": ["lib", "index.ts" , "*.ts" , "public"],
+  "ext": "ts,json",
+  "ignore": ["node_modules" , "certificates"],
+  "exec": "ts-node index.ts --host"
+}

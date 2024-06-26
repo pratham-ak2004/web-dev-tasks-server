@@ -1,14 +1,16 @@
 {
   "name": "web-dev-tasks-server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "2.0.0",
+  "description": "A socketIO server with express app for Web-dev-tasks",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js --host",
-    "start": "node index.js"
+    "dev": "nodemon",
+    "build:win": "tsc && xcopy public dist\\public /E /I",
+    "build:linux": "tsc && cp public/*.html dist/",
+    "start": "node ./dist/index.js",
+    "preview" : "ts-node index.ts"
   },
-  "keywords": [],
+  "keywords": ["socketIO", "express", "web-dev-tasks", "server", "typescript" , "webRTC"],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -17,7 +19,12 @@
     "socket.io": "^4.7.5"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.9",
     "mkcert": "^3.2.0",
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.2"
   }
 }
